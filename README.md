@@ -24,7 +24,8 @@ There is no configuration needed to run this website.
 
 Notes
 -----
-This website was developed to improve the existing website for Efexacademy.
+This website was developed to add responsiveness and improve ui the existing website for Efexacademy.
+
 
 The url of the existing website is: https://www.efexacademy.com/. 
 
