@@ -108,7 +108,8 @@ header img { width: 120px; }
     border-bottom: 1px solid #3f3f3f; 
     box-shadow: 0px 0px 10px 0px black; }
 
-.w3-sidebar { 
+#mySidebar { 
+	right: 0; 
 	z-index: 13;
 	width: 320px !important; }
 
@@ -126,10 +127,13 @@ header img { width: 120px; }
 
 #showSidebar { 
 	color: white; 
-	padding: 6px; }
+	padding: 6px;
+	background: none; 
+	margin: 0px 17px 0px 0px; }
 
 #close-button { 
-	padding: 8px; }
+	padding: 8px;
+	margin: 5px 0px 0px 0 }
 
 #close-button, #close-button:hover { 
     background: #00345f;
@@ -146,12 +150,9 @@ header img { width: 120px; }
 	margin-left: 250px;
     color: #fff; }
 
-#small-nav #showSidebar { background: none; }
-
 #mini-logo { 
 	width: 75px;
-	text-align: center;
-	margin-left: -100px; }
+	text-align: center; }
 
 .mySidebar #small-nav i { 
 	color: white; 
@@ -363,6 +364,22 @@ form input:focus {
 	border: 1px solid #3f3f3f;
 	border-radius: 3px; }
 
+/* Styling for map canvas */
+#map-canvas h4, #map-canvas2 h4 {
+    margin-top: 10px; }
+
+.ratings { 
+	margin-top: 10px;
+	color: gold !important; }
+
+#map-canvas img, #map-canvas2 img {
+	margin: 0px !important;
+}
+
+#map-canvas p, #map-canvas2 p {
+	margin-top: 10px !important;
+}
+
 ::placeholder { 
 	color: grey; 
 	font-style: italic; }
@@ -376,30 +393,29 @@ form input:focus {
 /* ---------------------------- Register Form ---------------------------- */
 #register-form {
 	display: none;
-	border: 1px solid grey;
-	box-shadow: 0px 1px 10px 2px grey;
-	padding: 0px 10px 0px 10px;
-	background: #fff;
-	margin-top: 100px;
-	font-size: 12px; 
-	width: 95%; }
+	padding-top: 80px !important;
+	background: rgba(0, 0, 0, 0.8) /* Green background with 30% opacity */; }
+
+.w3-modal-content {
+	padding: 20px 30px;
+}
 
 #closeForm { 
 	margin-top: 25px;
 	font-size: 22px; }
 
-.w3-modal { 
-	position: absolute;
-	top: 20px;
-	left: 2%;
-	right: 10%;
-	width: 100%;
-	height: auto; }
+.w3-modal { }
 
 #register-form h1 { 
 	margin: 40px 0px 10px 0px; 
 	color: #2e5083; 
-	font-size: 1.2em;
+	font-size: 1.8em;
+	font-weight: bold; }
+
+#register-form h1 { 
+	margin: 40px 0px 10px 0px; 
+	color: #2e5083; 
+	font-size: 1.4em;
 	font-weight: bold; }
 	
 #register-form i { color: black; }
@@ -477,8 +493,7 @@ footer #copyright { margin-top: 40px !important; }
     #left-col-small img { width: 100%; }
 	
 	#register-form { 
-		font-size: 14px; 
-		padding: 0px 20px 0px 20px; }
+		font-size: 14px; }
 	
 	#contact-large, #contact-container { 
 		border-radius: 5px 0px 0px 0px;
@@ -588,11 +603,12 @@ footer #copyright { margin-top: 40px !important; }
 		float: left;
 		width: 60%; }
 	
-	#left-col h2, #left-col img { 
+	#left-col h2 { 
 		margin-top: 80px !important; }
 	
-	/* H2 */
-	h2 { display: block; }
+	#left-col img { 
+		margin-top: 20px !important; 
+		margin-bottom: 50px !important; }
 	
 	#image-right { 
 		float: right; 
@@ -607,9 +623,9 @@ footer #copyright { margin-top: 40px !important; }
 		margin: 0; }
 	
 	#index-image img {
-	width: 100%
-}
-	
+		width: 100%
+	}
+
 	.imageSlide2 { 
 		max-width: 500px;
 		height: 100%; }
@@ -625,20 +641,9 @@ footer #copyright { margin-top: 40px !important; }
 	
 	#contact, #contact-large, #contact-container { border-radius: 5px 0px 0px 5px; }
 	
-	.w3-modal { 
-		position: absolute;
-		top: 100px;
-		left: 20%;
-		right: 50%;
-		width: 100%;
+	.w3-modal-content { 
 		max-width: 50em;
 		height: auto; }
-	
-	#register-form { 
-		width: 60%;
-		padding: 0px 40px 0px 40px;
-		background: #fff; 
-		font-size: 16px; }
 
 	#closeForm { 
 		margin-top: 30px;
@@ -655,6 +660,9 @@ footer #copyright { margin-top: 40px !important; }
 		padding-top: 10px;
 		padding-right: 5px; }
 	
+	#map-canvas img, #map-canvas2 img {
+		margin: 0px !important;
+	}
 }
 
 /* ---------------------------- END MEDIA QUERIES ---------------------------- */

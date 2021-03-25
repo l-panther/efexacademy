@@ -1,5 +1,5 @@
                     <!-- Navigation -->
-					<nav role="navigation" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-text-white" id="mySidebar">
+					<nav role="navigation" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-right w3-text-white w3-animate-right" id="mySidebar">
                       
                         <div class="w3-bar-item" title="Close menu"><span onclick="w3_close()" class="w3-btn w3-hide-large w3-right w3-xxlarge w3-hover-none" id="close-button" >&times;</span></div>
 						
@@ -18,13 +18,16 @@
                     
 					<!-- Small navigation icons -->
 					<nav role="navigation" class="w3-navbar w3-main w3-center w3-hide-large" id="small-nav">
+						
+						<!-- Logo -->
+				        <img src="images/logo/mini-logo.png" alt="Company logo" class="w3-left" id="mini-logo"> 
+						
                         <!-- Menu icon -->
-                        <div class="w3-bar-item w3-btn w3-hide-large w3-xlarge w3-left w3-text-white" id="showSidebar" title="Open menu"
+                        <div class="w3-bar-item w3-btn w3-hide-large w3-xlarge w3-right w3-text-white" id="showSidebar" title="Open menu"
                         onclick="w3_open()">&#9776; 
                         </div> 
             
-				        <!-- Logo -->
-				        <img src="images/logo/mini-logo.png" alt="Company logo" id="mini-logo"> 
+				        
 						
 					</nav> <!-- End small navigation icon-->				
   

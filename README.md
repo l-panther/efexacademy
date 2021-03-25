@@ -26,7 +26,6 @@ Notes
 -----
 This website was developed to add responsiveness and improve ui the existing website for Efexacademy.
 
-
 The url of the existing website is: https://www.efexacademy.com/. 
 
-This website is an example of my front-end web development capabilities. For more information about the development of this project, read the Development Plan for Efexacademy.
+This website is an example of my front-end web development capabilities. 

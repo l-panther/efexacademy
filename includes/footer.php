@@ -38,5 +38,9 @@
 		<script src="scripts/showMap.js"></script>
 		<script src="scripts/html5shiv.js"></script>
 		<script src="scripts/getDate.js"></script>
+		<script>
+			w3.slideshow(".indexSlide1", 5000);
+			w3.slideshow(".indexSlide2", 5000);
+		</script>
     </body> <!-- End body -->
 </html> <!-- End html -->

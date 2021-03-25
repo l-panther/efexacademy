@@ -8,3 +8,7 @@
 							<li>Shelving</li>
 							<li>Work stations</li>
 						</ul>
+						<div class="w3-col m2 s2 w3-margin-bottom w3-hide-small w3-hide-medium">
+							<img src="images/7.lite-modular/image3-large.png" alt="Modular stand pieces. One stand base and one metal nut" id="image3">
+						</div>
+

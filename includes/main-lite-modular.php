@@ -33,7 +33,7 @@
 									</div>
 									<div class="w3-col m2 s2 w3-margin-bottom">
 										<img src="images/7.lite-modular/image3.png" alt="Modular stand pieces. One stand base and one metal nut" id="image3">
-										</div>
+									</div>
 
 									<div class="w3-container">
 										<div class="w3-col m12 s12" id="contact">

@@ -105,8 +105,3 @@
 					<?php 
 						include 'includes/main-register-form.php'; # Registration form
 					?>
-
-<script>
-w3.slideshow(".indexSlide1", 3000);
-w3.slideshow(".indexSlide2", 3000);
-</script>

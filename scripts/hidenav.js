@@ -1,14 +1,14 @@
 // Open side bar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block"; // Get element and display block
-    document.getElementById("showSidebar").style.opacity = "0"; // Get element and display block   
+    document.getElementById("showSidebar").style.opacity = "0"; // Set element opacity  
 }
 
 // CLose side bar
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none"; // Get element and display none  
     document.getElementById("showSidebar").style.display = "block"; // Get element and display block
-    document.getElementById("showSidebar").style.opacity = "10"; // Get element and display block  
+    document.getElementById("showSidebar").style.opacity = "1"; // Get element and display block  
 }
 
 // Stick navaigation on window scroll
