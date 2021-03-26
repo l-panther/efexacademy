@@ -1,7 +1,7 @@
 					<!-- Main -->
                     <main role="main" class="w3-hide-large" id="main">
 						
-						<?php include 'includes/primarynav.php'; ?>
+						<?php include 'includes/primarynav.html'; ?>
 						
 						<!-- Animate container -->
 						<div class="w3-animate-left">
@@ -16,7 +16,7 @@
 
 							<!-- Section -->
 							<section class="w3-white w3-container w3-margin-top">
-								<?php include 'includes/content-lite-modular.php'; ?>
+								<?php include 'views/content-lite-modular.html'; ?>
 							</section> <!-- End section -->
 
 							<!-- Stroke -->
@@ -37,7 +37,7 @@
 
 									<div class="w3-container">
 										<div class="w3-col m12 s12" id="contact">
-											<?php include 'includes/contact.php' ?>
+											<?php include 'views/content-contact.html' ?>
 										</div>
 									</div>
 								</div>
@@ -52,7 +52,7 @@
                                 <div class="w3-row-padding" id="index-image">
                                     <div class="w3-col s12" id="nav-box">
                                         <div id="nav-left">
-                                        <?php include 'includes/primarynav-large.php'; ?>
+                                        <?php include 'includes/primarynav-large.html'; ?>
                                         </div>
                                         <div class="w3-display-container" id="image-right">
                                             <img src="images/7.lite-modular/banner-large.png" alt="Lite Modular stand" class="image1">
@@ -68,7 +68,7 @@
                             </div>
                             <div class="right-col">
                                 <?php 
-                                    include 'includes/main-lite-modular-large.php';
+                                    include 'views/content-lite-modular-large.php';
                                 ?>
                             </div>
                         </div>

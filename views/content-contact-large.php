@@ -6,8 +6,8 @@
 							<h2 class="w3-padding-top">Call Us</h2>
 
 							<div class="ww3-round w3-large" id="contact-large"> 
-								<?php include 'includes/contact.php' ?>
+								<?php include 'views/content-contact.html' ?>
 							</div>
-							<?php include 'includes/main-contact-form2.php'; ?>		
+							<?php include 'includes/contact-form2.php'; ?>		
 						</section> <!-- End min content -->
 				

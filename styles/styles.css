@@ -404,18 +404,10 @@ form input:focus {
 	margin-top: 25px;
 	font-size: 22px; }
 
-.w3-modal { }
-
 #register-form h1 { 
 	margin: 40px 0px 10px 0px; 
 	color: #2e5083; 
-	font-size: 1.8em;
-	font-weight: bold; }
-
-#register-form h1 { 
-	margin: 40px 0px 10px 0px; 
-	color: #2e5083; 
-	font-size: 1.4em;
+	font-size: 2em;
 	font-weight: bold; }
 	
 #register-form i { color: black; }
@@ -477,6 +469,10 @@ footer #copyright { margin-top: 40px !important; }
 		font-size: 2em !important; 
 		margin-left: 10px; 
 		width: 70%; }
+	
+#register-form h1 { 
+	
+	font-size: 1.6em; }
 	
 	#testimonialsh2 .w3-container { 
         padding: 0px 10px 0px 10px;
@@ -598,6 +594,9 @@ footer #copyright { margin-top: 40px !important; }
 		background: linear-gradient(to right, #5a6028, #a7ae64, #a7ae64);
 		display: block; 
 		margin-top: 20px; }
+		
+	#register-form h1 { 
+		font-size: 2em; }
 
 	#left-col, #main-contact-large { 
 		float: left;

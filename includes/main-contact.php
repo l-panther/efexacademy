@@ -1,7 +1,7 @@
 					<!-- Main -->
 					<main role="main" class="w3-hide-large" id="main">
 						
-						<?php include 'includes/primarynav.php'; ?>
+						<?php include 'includes/primarynav.html'; ?>
 
 						<!-- Animate container -->
 						<div class="w3-animate-left">
@@ -80,16 +80,14 @@
 							<div class="w3-row" id="index-image">
 								<div class="w3-col s12" id="nav-box-contact">
 									<div id="nav-left">
-									<?php include 'includes/primarynav-large.php'; ?>
+									<?php include 'includes/primarynav-large.html'; ?>
 									</div>
 									<div class="w3-display-container" id="image-right">
 										<img src="images/11.contact/banner-large.png" alt="Phone">
 									</div>
 								</div>
 								<div class="w3-col m12 s12">
-									
-									
-										<h2 class="w3-margin-bottom">Locate Us</h2>
+									<h2 class="w3-margin-bottom">Locate Us</h2>
 										<!-- Map -->
 									<!-- Map container -->
 									<div id="map-container2">
@@ -103,7 +101,7 @@
 						</div>
 						<div class="right-col">
 							<?php 
-								include 'includes/main-contact-large.php';
+								include 'views/content-contact-large.php';
 							?>
 						</div>
 					</div> <!-- End large main -->

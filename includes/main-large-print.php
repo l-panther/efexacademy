@@ -1,7 +1,7 @@
 					<!-- Main -->
                     <main role="main" class="w3-hide-large" id="main">
 						
-						<?php include 'includes/primarynav.php'; ?>
+						<?php include 'includes/primarynav.html'; ?>
 						
 						<!-- Animate container -->
 						<div class="w3-animate-left">
@@ -16,7 +16,7 @@
 
 							<!-- Section -->
 							<section class="w3-white w3-container w3-margin-top">
-								<?php include 'includes/content-large-print.php'; ?>
+								<?php include 'views/content-large-print.html'; ?>
 							</section> <!-- End section -->
 							
 							<!-- Stroke -->
@@ -30,7 +30,7 @@
 									</div>
 
 									<div class="w3-col m12 s12" id="contact">
-										<?php include 'includes/contact.php'; ?>
+										<?php include 'views/content-contact.html'; ?>
 									</div>
 
 								</div>
@@ -45,7 +45,7 @@
                                 <div class="w3-row" id="index-image">
                                     <div class="w3-col s12" id="nav-box">
                                         <div id="nav-left">
-                                        <?php include 'includes/primarynav-large.php'; ?>
+                                        <?php include 'includes/primarynav-large.html'; ?>
                                         </div>
 										<div class="w3-display-container" id="image-right">
 										<img src="images/9.large-print/banner-large.png" alt="Design print" class="image1">
@@ -58,7 +58,7 @@
                             </div>
                             <div class="right-col">
                                 <?php 
-                                    include 'includes/main-large-print-large.php';
+                                    include 'views/content-large-print-large.php';
                                 ?>
                             </div>
                         </div>

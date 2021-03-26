@@ -1,9 +1,9 @@
 						<!-- Main content -->
 						<section class="w3-row main-content-large">
-							<?php include 'includes/content-lite-modular.php'; ?>
+							<?php include 'views/content-popup-stands.html'; ?>
 						</section> <!-- End main content -->
 
 						<!-- Contact -->
 						<div class="w3-center w3-large" id="contact-large"> 
-							<?php include 'includes/contact.php'; ?>
+							<?php include 'views/content-contact.html'; ?>
 						</div> <!-- End contact -->

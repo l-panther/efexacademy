@@ -1,7 +1,7 @@
 					<!-- Main --> 
                     <main role="main" class="w3-hide-large" id="main">
 						
-						<?php include 'includes/primarynav.php'; ?>
+						<?php include 'includes/primarynav.html'; ?>
 						
 						<!-- Animate container -->
 				
@@ -25,7 +25,7 @@
 
                         <!-- Section-->
                         <section class="w3-white w3-container w3-margin-top w3-animate-bottom">
-                            <?php include 'includes/content-index.php'; ?>
+                            <?php include 'views/content-index.html'; ?>
                         </section> <!-- End section -->
 
 						<!-- Stroke -->
@@ -51,13 +51,13 @@
 										
 										<div class="w3-white">
                                             <!-- Marquee -->
-                                            <?php include 'includes/testimonials.php'; ?>
+                                            <?php include 'views/testimonials.html'; ?>
 										</div>
                                     </div>
 
                                     <!-- Contact -->
                                     <div class="w3-col m12 s12 w3-center" id="contact">
-                                        <?php include 'includes/contact.php'; ?>
+                                        <?php include 'views/content-contact.html'; ?>
                                     </div> <!-- End contact-->
                                 </div>
 
@@ -72,7 +72,7 @@
 							<div class="w3-row-padding w3-animate-left" id="index-image">
 								<div class="w3-col s12" id="nav-box">
 									<div id="nav-left">
-									<?php include 'includes/primarynav-large.php'; ?>
+									<?php include 'includes/primarynav-large.html'; ?>
 									</div>
 									<div class="w3-display-container" id="image-right">
 										<img src="images/1.index/banners-large/roller-banners.png" alt="Company stand" class="image1 indexSlide2">
@@ -97,7 +97,7 @@
 						</div>
 						<div class="right-col w3-animate-right">
 							<?php 
-								include 'includes/main-index-large.php';
+								include 'views/content-index-large.php';
 							?>
 						</div>
                     </div> <!-- End large desktop-->
