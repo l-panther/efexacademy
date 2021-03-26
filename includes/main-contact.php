@@ -1,13 +1,12 @@
 					<!-- Main -->
 					<main role="main" class="w3-hide-large" id="main">
-						
 						<?php include 'includes/primarynav.html'; ?>
 
 						<!-- Animate container -->
 						<div class="w3-animate-left">
 							<!-- Upper section -->
 							<section class="upper-section">
-								<p class="w3-center w3-padding-top w3-margin-bottom w3-hide-small slogan">All your exhibition and display requirements</p>
+								<p class="w3-center w3-padding-top w3-margin-bottom slogan">All your exhibition <span class="w3-hide-small">and display </span>requirements</p>
 
 								<div class="banner">
 									<img src="images/11.contact/banner-small.png" alt="Large print">
@@ -55,7 +54,7 @@
 							
 							<div class="w3-row-padding lower-section ">
 								<div class="w3-col s12 m6">
-									<?php include 'includes/main-contact-form.php'; ?> 
+									<?php include 'includes/contact-form.php'; ?> 
 								</div>
 
 								<section class="w3-col s12 m6 w3-hide-large">
