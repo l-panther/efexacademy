@@ -188,6 +188,7 @@ header img { width: 120px; }
 
 .stroke {
 	position: relative; 
+	margin-bottom: -10px;
 	bottom: 0 !important; }
 
 .banner h1 { 
@@ -606,7 +607,7 @@ footer #copyright { margin-top: 40px !important; }
 		margin-top: 80px !important; }
 	
 	#left-col img { 
-		margin-top: 20px !important; 
+		margin-top: 80px !important; 
 		margin-bottom: 50px !important; }
 	
 	#image-right { 
