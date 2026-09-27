@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroArt from '../components/HeroArt.astro';
+import GalleryThumb from '../components/GalleryThumb.astro';
+
+const testimonials = [
+  { quote: "I would like to thank you for your superb help on the event at the British Museum. The Deputy Private Secretary to The Prince of Wales and the Duchess of Cornwall was singing the praises of IBLF and the event.", author: 'The Prince of Wales International Business Leaders Forum', stars: 5 },
+  { quote: 'The stands arrived and they look excellent, thank you very much for turning it around so quickly. Much appreciated.', author: 'Tourism Ireland', stars: 5 },
+  { quote: 'The stands look really nice, thank you. Even better than the other ones because they are a bit lower so we can put them anywhere in the office.', author: 'Visa Europe', stars: 3 },
+  { quote: "Delighted, they look great. We have 10 of them standing up in our office- so not much room to move around! The best one we like is Seattle so far... and the HR brand one. They have all turned out so well. Thanks for everything.", author: 'Hyatt Hotels & Resorts', stars: 3 },
+];
+---
+
+<Layout title="Home" active="home">
+<section class="page-hero">
+  <div class="hero-grid">
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Quality Print &amp; Display Solutions</span>
+
+      <h1>The Home of Adverting</h1>
+
+      <p>
+        Professional banners and displays for events, exhibitions and promotions.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/contact" class="hero-btn">
+          Get a Quote
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img
+        src="/assets/images/1.index/hero.png"
+        alt="Advertising and promotional banner display"
+      />
+    </div>
+  </div>
+</section>
+
+  <div class="page-content">
+    <section>
+      <h2 class="mt-4">Who Are We?</h2>
+      <p>We are a small team with over 20 years of experience in the industry. We pride ourselves on delivering projects on time, within budget, and exceeding clients' expectations.</p>
+      <p>We are agency-friendly, and offer stands for temporary use at events.</p>
+
+      <h2 class="mt-4 pt-4">What We Do?</h2>
+      <p>We specialize in providing light-weight, portable modular displays and exhibition stands for a wide range of promotional needs such as brand events, conferences, presentations, product launches, recruitment drives, and shows. Our displays are designed to be easy to transport and set up, providing a versatile solution for any event.</p>
+
+      <div class="testimonial-panel">
+        <h2 class="head mb-0">Testimonials</h2>
+        <div class="body">
+          {testimonials.map((t) => (
+            <div class="testimonial-item">
+              <p class="mb-0">&ldquo;{t.quote}&rdquo;</p>
+              <cite>{t.author}</cite>
+              <div class="stars" aria-label={`${t.stars} out of 5 stars`}>{'★'.repeat(t.stars)}{'☆'.repeat(5 - t.stars)}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="row text-center image-content">
+      <div class="col-sm-6">
+        <img src="/assets/images/3.banner-stands/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
+      </div>
+      <div class="col-sm-6">
+        <img src="/assets/images/3.banner-stands/image2.jpg" alt="Brand event display stand with promotional materials" />
+      </div>
+    </section>
+  </div>
+</Layout>

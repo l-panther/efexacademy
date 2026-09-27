@@ -1,0 +1,82 @@
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import Sidebar from '../components/Sidebar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const { title, active = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} · Efexacademy</title>
+  <meta name="description" content="Efex Academy offers custom-designed company banners, exhibition stands, and large format printing solutions for businesses. Enhance your brand presence with our professional event display services." />
+  <meta name="keywords" content="Custom Banners, Banner Design, Roll-up Banners, Pop-up Stands, Exhibition Stands, Modular Stands, Large Format Printing, Event Displays, Trade Show Stands, Corporate Branding, Efex Academy" />
+  <meta name="author" content="">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="container">
+  <header>
+    <!-- Compact sticky toolbar — small devices only -->
+    <div class="mobile-toolbar d-lg-none sticky-top">
+      <div class="container-fluid d-flex align-items-center justify-content-between px-3">
+        <a href="/" class="mobile-brand text-decoration-none" aria-label="Efexacademy home">efex</a>
+        <button
+          class="menu-toggle-btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#siteSidebar"
+          aria-controls="siteSidebar"
+          aria-expanded="false"
+          aria-label="Open section menu"
+        >
+          <i class="bi bi-list fs-5" aria-hidden="true"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Full header with logo + tagline — large screens only -->
+    <div class="topbar container-fluid d-none d-lg-flex align-items-start justify-content-between flex-wrap gap-3 px-4">
+      <a href="/" class="text-decoration-none" aria-label="Efexacademy home">
+        <div class="brand-mark">
+          efex
+          <small>Academy</small>
+        </div>
+        <div class="brand-stripe"><span></span><span></span><span></span></div>
+      </a>
+      <p class="tagline mb-0 pt-2">A complete service for all your exhibition and display requirements.</p>
+    </div>
+    <div class="stripe-bar"><span></span><span></span><span></span><span></span></div>
+  </header>
+
+  <div class="d-flex align-items-stretch">
+    <Sidebar active={active} />
+    <main id="main" class="flex-grow-1" style="min-width:0;">
+      <slot />
+    </main>
+  </div>
+
+  <Footer />
+  </div>
+
+  <script>
+    import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+  </script>
+</body>
+</html>

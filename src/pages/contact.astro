@@ -1,0 +1,415 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact" active="contact">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <div class="page-content">
+    <div class="contact-form-wrap">
+      <h2 class="text-center">Send A Message</h2>
+      <form id="contactForm" novalidate aria-describedby="formStatus">
+        <div class="field-icon-row">
+          <i class="bi bi-person-fill icon" aria-hidden="true"></i>
+          <div class="flex-grow-1">
+            <label class="visually-hidden" for="fullName">Full name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Full name"
+              required
+              aria-required="true"
+              aria-describedby="fullName-error"
+            />
+            <p id="fullName-error" class="field-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field-icon-row">
+          <i class="bi bi-building icon" aria-hidden="true"></i>
+          <div class="flex-grow-1">
+            <label class="visually-hidden" for="company">Company Name</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="Company Name"
+              aria-describedby="company-error"
+            />
+            <p id="company-error" class="field-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field-icon-row">
+          <i class="bi bi-envelope-fill icon" aria-hidden="true"></i>
+          <div class="flex-grow-1">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email address"
+              required
+              aria-required="true"
+              aria-describedby="email-error"
+            />
+            <p id="email-error" class="field-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field-icon-row">
+          <i class="bi bi-telephone-fill icon" aria-hidden="true"></i>
+          <div class="flex-grow-1">
+            <label class="visually-hidden" for="phone">Telephone number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Telephone number"
+              aria-describedby="phone-error"
+            />
+            <p id="phone-error" class="field-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field-icon-row align-items-start">
+  <i class="bi bi-pencil-fill icon mt-2" aria-hidden="true"></i>
+  <div class="flex-grow-1">
+    <label class="visually-hidden" for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      maxlength="200"
+      placeholder="Type your message here..."
+      required
+      aria-required="true"
+      aria-describedby="message-error charCount-wrap"
+    ></textarea>
+    <div class="message-meta-row">
+      <p id="message-error" class="field-error" role="alert"></p>
+      <div class="char-count" id="charCount-wrap"><span id="charCount">0</span>/200</div>
+    </div>
+  </div>
+</div>
+
+        <button type="submit" class="btn btn-olive w-100 py-2">
+          <span class="btn-label">Send Message</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+
+        <p id="formStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="gallery-row" style="display:block;">
+    <h2 class="text-center mb-4">Where to Find Us</h2>
+    <div id="map" role="application" aria-label="Map showing the EFEX Academy office location"></div>
+  </div>
+
+  <!-- Success popup (fake site: purely client-side confirmation) -->
+  <div id="successOverlay" class="popup-overlay" hidden>
+    <div class="popup-card" role="alertdialog" aria-modal="true" aria-labelledby="successTitle" aria-describedby="successBody">
+      <i class="bi bi-check-circle-fill popup-icon" aria-hidden="true"></i>
+      <h3 id="successTitle">Message Sent</h3>
+      <p id="successBody">Thanks for reaching out — we've noted your message and will get back to you soon.</p>
+      <button type="button" id="successClose" class="btn btn-olive">Close</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // Leaflet is loaded globally via the CDN <script> tag, so TS doesn't know about it.
+  declare const L: any;
+
+  // ---------- Character counter ----------
+  const textarea = document.getElementById('message') as HTMLTextAreaElement | null;
+  const count = document.getElementById('charCount');
+  textarea?.addEventListener('input', () => {
+    if (count) count.textContent = String(textarea.value.length);
+  });
+
+  // ---------- Map ----------
+  const map = L.map('map').setView([51.3617, -0.1410], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+  }).addTo(map);
+  L.marker([51.3617, -0.1410]).addTo(map)
+    .bindPopup('<strong>EFEX Academy</strong><br>EFEX Academy, London, UK<br><em>Advertising &amp; Banner Printing</em>')
+    .openPopup();
+
+  // ---------- Validation ----------
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+  type FieldName = 'fullName' | 'company' | 'email' | 'phone' | 'message';
+
+  const fields: Record<FieldName, HTMLInputElement | HTMLTextAreaElement | null> = {
+    fullName: document.getElementById('fullName') as HTMLInputElement | null,
+    company: document.getElementById('company') as HTMLInputElement | null,
+    email: document.getElementById('email') as HTMLInputElement | null,
+    phone: document.getElementById('phone') as HTMLInputElement | null,
+    message: document.getElementById('message') as HTMLTextAreaElement | null,
+  };
+
+  // Each validator returns an error string, or '' if valid.
+  const validators: Record<FieldName, (value: string) => string> = {
+    fullName(value: string) {
+      const v = value.trim();
+      if (!v) return 'Please enter your full name.';
+      if (v.length < 2) return 'Name must be at least 2 characters.';
+      if (!/^[a-zA-Z\s'-]+$/.test(v)) return 'Name can only contain letters, spaces, hyphens and apostrophes.';
+      return '';
+    },
+    company(value: string) {
+      // optional field — only validate if something was typed
+      const v = value.trim();
+      if (v && v.length < 2) return 'Company name looks too short.';
+      return '';
+    },
+    email(value: string) {
+      const v = value.trim();
+      if (!v) return 'Please enter your email address.';
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailPattern.test(v)) return 'Please enter a valid email address.';
+      return '';
+    },
+    phone(value: string) {
+      const v = value.trim();
+      if (!v) return ''; // optional
+      const phonePattern = /^[+]?[\d\s()-]{7,20}$/;
+      if (!phonePattern.test(v)) return 'Please enter a valid phone number.';
+      return '';
+    },
+    message(value: string) {
+      const v = value.trim();
+      if (!v) return 'Please enter a message.';
+      if (v.length < 10) return 'Message should be at least 10 characters.';
+      if (v.length > 200) return 'Message cannot exceed 200 characters.';
+      return '';
+    },
+  };
+
+  function setFieldError(name: FieldName, message: string) {
+    const input = fields[name];
+    const errorEl = document.getElementById(`${name}-error`);
+    if (!input || !errorEl) return;
+
+    if (message) {
+      input.classList.add('is-invalid');
+      input.classList.remove('is-valid');
+      input.setAttribute('aria-invalid', 'true');
+      errorEl.textContent = message;
+    } else {
+      input.classList.remove('is-invalid');
+      input.classList.add('is-valid');
+      input.setAttribute('aria-invalid', 'false');
+      errorEl.textContent = '';
+    }
+  }
+
+  function validateField(name: FieldName): boolean {
+    const input = fields[name];
+    if (!input) return true;
+    const error = validators[name](input.value);
+    setFieldError(name, error);
+    return !error;
+  }
+
+  const fieldNames = Object.keys(fields) as FieldName[];
+
+  // Validate on blur
+  fieldNames.forEach((name) => {
+    const input = fields[name];
+    input?.addEventListener('blur', () => validateField(name));
+
+    // Clear the error as soon as the user fixes it, re-validate live
+    input?.addEventListener('input', () => {
+      if (input.classList.contains('is-invalid')) {
+        validateField(name);
+      }
+    });
+  });
+
+function validateAll(): boolean {
+  let isValid = true;
+
+  fieldNames.forEach((name) => {
+    if (!validateField(name)) isValid = false;
+  });
+
+  if (!isValid) {
+    const firstInvalidName = fieldNames.find((name) => {
+      const input = fields[name];
+      return input?.classList.contains('is-invalid');
+    });
+
+    if (firstInvalidName) {
+      fields[firstInvalidName]?.focus();
+    }
+  }
+
+  return isValid;
+}
+
+  // Simulates a server-side round trip (this is a fake site — no real endpoint).
+  // In a real app this would be a fetch() call and you'd use the server's
+  // response to decide success/failure instead of re-running client validation.
+  function fakeServerSubmit(formData: Record<string, string>): Promise<{ ok: boolean }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ ok: true });
+      }, 800);
+    });
+  }
+
+  function showSuccessPopup() {
+    const overlay = document.getElementById('successOverlay');
+    if (!overlay) return;
+    overlay.hidden = false;
+    document.getElementById('successClose')?.focus();
+  }
+
+  function hideSuccessPopup() {
+    const overlay = document.getElementById('successOverlay');
+    if (overlay) overlay.hidden = true;
+    fields.fullName?.focus();
+  }
+
+  document.getElementById('successClose')?.addEventListener('click', hideSuccessPopup);
+  document.getElementById('successOverlay')?.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) hideSuccessPopup();
+  });
+  document.addEventListener('keydown', (e) => {
+    const overlay = document.getElementById('successOverlay');
+    if (e.key === 'Escape' && overlay && !overlay.hidden) hideSuccessPopup();
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form) return;
+
+    if (formStatus) formStatus.textContent = '';
+
+    if (!validateAll()) {
+      if (formStatus) formStatus.textContent = 'Please fix the highlighted fields before submitting.';
+      return;
+    }
+
+    // Simulate a server round trip
+    submitBtn?.classList.add('is-loading');
+    submitBtn?.setAttribute('disabled', 'true');
+
+    const formData = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const result = await fakeServerSubmit(formData);
+
+    submitBtn?.classList.remove('is-loading');
+    submitBtn?.removeAttribute('disabled');
+
+    if (result.ok) {
+      if (formStatus) formStatus.textContent = 'Your message has been sent successfully.';
+      showSuccessPopup();
+      form.reset();
+      if (count) count.textContent = '0';
+      fieldNames.forEach((name) => {
+        fields[name]?.classList.remove('is-valid', 'is-invalid');
+        const errorEl = document.getElementById(`${name}-error`);
+        if (errorEl) errorEl.textContent = '';
+      });
+    } else {
+      if (formStatus) formStatus.textContent = 'Something went wrong. Please try again.';
+    }
+  });
+</script>
+
+  <style>
+    .field-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.1rem;
+    }
+    .field-icon-row.align-items-start {
+      align-items: flex-start;
+    }
+    .field-icon-row input,
+    .field-icon-row textarea {
+      width: 100%;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .field-icon-row input.is-invalid,
+    .field-icon-row textarea.is-invalid {
+      border-color: #d64545;
+      box-shadow: 0 0 0 1px rgba(214, 69, 69, 0.25);
+    }
+    .field-icon-row input.is-valid,
+    .field-icon-row textarea.is-valid {
+      border-color: #4a7c3c;
+    }
+    .field-error {
+      margin: 0.35rem 0 0;
+      font-size: 0.85rem;
+      color: #d64545;
+      min-height: 1.1em;
+    }
+
+    .btn-olive {
+      position: relative;
+    }
+    .btn-olive.is-loading .btn-label {
+      visibility: hidden;
+    }
+    .btn-spinner {
+      display: none;
+    }
+    .btn-olive.is-loading .btn-spinner {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      margin: -9px 0 0 -9px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    .popup-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    }
+    .popup-icon {
+      font-size: 2.5rem;
+      color: #4a7c3c;
+      margin-bottom: 0.75rem;
+    }
+    .popup-card h3 {
+      margin: 0 0 0.5rem;
+    }
+    .popup-card p {
+      margin: 0 0 1.25rem;
+      color: #555;
+    }
+  </style>
+</Layout>
