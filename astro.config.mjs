@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://efexacademy.example.com',
+  site: 'https://l-panther.github.io',
+  base: '/efexacademy/',
 });
