@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -25,7 +26,7 @@ const testimonials = [
       </p>
 
       <div class="hero-actions">
-        <a href="/contact" class="hero-btn">
+        <a href={asset('contact')} class="hero-btn">
           Get a Quote
           <i class="bi bi-arrow-right"></i>
         </a>
@@ -34,7 +35,7 @@ const testimonials = [
 
     <div class="hero-visual">
       <img
-        src="/assets/images/1.index/hero.png"
+        src={asset('assets/images/1.index/hero.png')}
         alt="Advertising and promotional banner display"
       />
     </div>
@@ -66,10 +67,10 @@ const testimonials = [
 
     <section class="row text-center image-content">
       <div class="col-sm-6">
-        <img src="/assets/images/3.banner-stands/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
+        <img src={asset('assets/images/3.banner-stands/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
       </div>
       <div class="col-sm-6">
-        <img src="/assets/images/3.banner-stands/image2.jpg" alt="Brand event display stand with promotional materials" />
+        <img src={asset('assets/images/3.banner-stands/image2.jpg')} alt="Brand event display stand with promotional materials" />
       </div>
     </section>
   </div>
