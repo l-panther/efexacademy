@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/paths';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -19,8 +20,8 @@ const { title, active = '' } = Astro.props;
   <meta name="keywords" content="Custom Banners, Banner Design, Roll-up Banners, Pop-up Stands, Exhibition Stands, Modular Stands, Large Format Printing, Event Displays, Trade Show Stands, Corporate Branding, Efex Academy" />
   <meta name="author" content="">
   
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo/logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href={asset('assets/images/logo/logo.png')}>
+  <link rel="apple-touch-icon" sizes="180x180" href={asset('assets/images/logo/apple-touch-icon.png')}>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
