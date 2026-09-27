@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -27,7 +28,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
       <div class="hero-visual">
         <img
-          src="/assets/images/2.roller-banners/hero.png"
+          src={asset('assets/images/2.roller-banners/hero.png')}
           alt="Advertising and promotional banner display"
         />
       </div>
@@ -51,7 +52,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row text-center image-content">
       <div class="col-12">
-        <img src="/assets/images/2.roller-banners/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
+        <img src={asset('assets/images/2.roller-banners/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
       </div>
     </section>
   </div>
