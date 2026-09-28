@@ -505,9 +505,9 @@ footer ul { padding: 20px 0px; }
 
 footer li, footer a { color: var(--dark-green); }
 
-footer p:last-child { padding-bottom: 0px; }
-
 footer .theme-color { color: var(--darker-green); }
+
+footer .legal-link { padding 20px 0; }
 
 /* ========================== MEDIA QUERIES ========================== */
 @media screen and (min-width: 576px) {
@@ -724,9 +724,5 @@ footer .theme-color { color: var(--darker-green); }
   footer h3,
   footer h4 {
     font-size: 0.9rem !important;
-  }
-
-  footer p:last-child {
-    padding-top: 0.75rem;
   }
 }
