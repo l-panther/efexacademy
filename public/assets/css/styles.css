@@ -700,20 +700,24 @@ footer .theme-color { color: var(--darker-green); }
   /* -------------------------
      FOOTER
   ------------------------- */
-
-  footer {
-    padding: 2.5rem 1.25rem 1.5rem !important;
-  }
-
-  footer ul {
-    padding: 14px 0;
+ footer {
+    padding: 2.25rem 1.25rem 1.5rem !important;
   }
 
   footer p,
-  footer a,
-  footer li {
-    font-size: 0.78rem;
-    line-height: 1.6;
+  footer li,
+  footer a {
+    font-size: 0.72rem;
+    line-height: 1.55;
+  }
+
+  footer ul {
+    padding: 12px 0;
+  }
+
+  footer h3,
+  footer h4 {
+    font-size: 0.9rem !important;
   }
 
   footer p:last-child {
