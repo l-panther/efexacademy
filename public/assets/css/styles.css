@@ -349,7 +349,17 @@ i {
 
 .text { margin-bottom: 3rem; }
 
-#literature-set img { width: 65%; padding: 30px 0 !important; }
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.image-gallery img {
+  width: 65%;
+  display: block;
+}
 
 /* ========================== CONTACT ========================== */
 #contact-details {
@@ -646,17 +656,18 @@ footer .theme-color { color: var(--darker-green); }
 
 
   /* -------------------------
-     IMAGE / LITERATURE AREA
+     IMAGE / GALLERY AREA
   ------------------------- */
 
-  #literature-set {
-    margin-top: 2rem;
+  .image-gallery {
+    margin-top: 3rem;
+    gap: 1.25rem;
   }
 
-  #literature-set img {
+  .image-gallery img {
     width: 100%;
     padding: 0 !important;
-    margin-bottom: 1rem;
+    margin: 0;
   }
 
 
