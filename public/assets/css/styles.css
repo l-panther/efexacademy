@@ -350,7 +350,8 @@ i {
 .text { margin-bottom: 3rem; }
 
 .image-content {
-  margin-top: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .image-content img {
@@ -658,21 +659,19 @@ footer .theme-color { color: var(--darker-green); }
   ------------------------- */
 
   .image-content {
-    margin-top: 3rem;
+    padding-top: 3rem !important;
+    padding-bottom: 1.5rem !important;
     row-gap: 1.5rem;
   }
 
-  .image-content > div {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .image-content img {
+    display: block;
     width: 100%;
+    height: auto;
+    padding: 0 !important;
     margin: 0;
-    padding: 0;
   }
-
+}
 
   /* -------------------------
      CONTACT
