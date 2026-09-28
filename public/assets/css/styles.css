@@ -527,3 +527,182 @@ footer .theme-color { color: var(--darker-green); }
   .w3-modal-content { max-width: 600px; margin: auto; }
   #form-map i { padding: 0; text-align: center; }
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media screen and (max-width: 575px) {
+
+  /* Prevent desktop container sizing affecting mobile */
+  .container {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* General section spacing */
+  .section {
+    padding: 2.75rem 1.25rem;
+  }
+
+
+  /* -------------------------
+     NAVBAR
+  ------------------------- */
+
+  .toolbar {
+    padding: 10px 12px;
+  }
+
+  #mini-logo {
+    width: 42px;
+  }
+
+
+  /* -------------------------
+     HERO
+  ------------------------- */
+
+  .hero {
+    height: auto;
+    min-height: 500px;
+    padding: 4rem 1.25rem 3.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.05;
+    padding: 0.4rem 0 !important;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 30rem;
+  }
+
+  .hero .btn {
+    padding: 0.65em 1.8em;
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .hero img {
+    width: 72%;
+    max-width: 250px;
+    margin-top: 2.5rem;
+  }
+
+
+  /* -------------------------
+     MAIN CONTENT
+  ------------------------- */
+
+  .text {
+    margin-bottom: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .main-content p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+
+  /* -------------------------
+     TESTIMONIALS
+  ------------------------- */
+
+  #testimonials {
+    margin-top: 1.5rem;
+  }
+
+  #testimonials h2 {
+    padding: 10px 14px;
+    font-size: 1.1rem;
+  }
+
+  .testimonials-container {
+    padding: 1.5rem 1.25rem 1rem;
+  }
+
+  #testimonials p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    padding-bottom: 0.65rem;
+  }
+
+  #testimonials .testimonial-name {
+    font-size: 0.8rem;
+  }
+
+
+  /* -------------------------
+     IMAGE / LITERATURE AREA
+  ------------------------- */
+
+  #literature-set {
+    margin-top: 2rem;
+  }
+
+  #literature-set img {
+    width: 100%;
+    padding: 0 !important;
+    margin-bottom: 1rem;
+  }
+
+
+  /* -------------------------
+     CONTACT
+  ------------------------- */
+
+  #contact-details {
+    padding: 2rem 1.25rem;
+  }
+
+  #messageForm {
+    padding: 1.5rem 1.25rem;
+  }
+
+  #form-map h1 {
+    font-size: 1.6rem;
+    padding-top: 2rem;
+  }
+
+  #map-canvas {
+    height: 320px;
+    margin-top: 1.5rem;
+  }
+
+
+  /* -------------------------
+     FOOTER
+  ------------------------- */
+
+  footer {
+    padding: 2.5rem 1.25rem 1.5rem !important;
+  }
+
+  footer ul {
+    padding: 14px 0;
+  }
+
+  footer p,
+  footer a,
+  footer li {
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  footer p:last-child {
+    padding-top: 0.75rem;
+  }
+}
