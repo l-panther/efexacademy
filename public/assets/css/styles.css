@@ -3,6 +3,8 @@
   background: red !important;
 }
 
+.image-content img { border: 10px solid red}
+
 /* ========================== VARIABLES ========================== */
 :root {
   --site-bg: #a8af65;
