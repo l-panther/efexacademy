@@ -422,7 +422,7 @@ img { width:100%}
 .site-footer .services-line a{ color:var(--olive); }
 .site-footer p{ margin-bottom:10px; }
 .site-footer a{ color: var(--olive); }
-.site-footer .legal-links { padding: 20px 0; color:var(--grey-bg) !important; text-decoration: none; }
+.site-footer .legal-links { padding: 20px 0; color:var(--grey-bg) !important; list-style: none; }
 .site-footer .legal-links a{ color:var(--olive); text-decoration:underline; }
 .copyright{ text-align:center; color:rgba(255,255,255,.55); font-size:.85rem; padding-top:20px; margin-top:20px; border-top:1px solid rgba(255,255,255,.1); }
 .copyright a{ color:var(--olive); }
