@@ -1,3 +1,8 @@
+.image-content {
+  padding-top: 100px !important;
+  background: red !important;
+}
+
 /* ========================== VARIABLES ========================== */
 :root {
   --site-bg: #a8af65;
