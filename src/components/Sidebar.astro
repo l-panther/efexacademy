@@ -1,6 +1,8 @@
 ---
 import { navItems } from '../data/nav.js';
+
 const { active } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <nav
@@ -11,16 +13,26 @@ const { active } = Astro.props;
   aria-label="Section navigation"
 >
   <div class="offcanvas-header">
-    <h2 class="offcanvas-title h6 mb-0" id="siteSidebarLabel">Menu</h2>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#siteSidebar" aria-label="Close menu"></button>
+    <h2 class="offcanvas-title h6 mb-0" id="siteSidebarLabel">
+      Menu
+    </h2>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      data-bs-target="#siteSidebar"
+      aria-label="Close menu"
+    ></button>
   </div>
+
   <div class="offcanvas-body p-0">
     <ul class="nav flex-column">
       {navItems.map((item) => (
         <li class="nav-item">
           <a
             class={`nav-link ${active === item.key ? 'active' : ''}`}
-            href={item.href}
+            href={`${base}${item.href}`}
             aria-current={active === item.key ? 'page' : undefined}
           >
             {item.label}
