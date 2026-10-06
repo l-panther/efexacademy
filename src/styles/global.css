@@ -486,7 +486,7 @@ img { width:100%}
   .hero-visual img {
     width: 100%;
     max-width: 410px;
-    margin-top: 2rem;
+    margin-top: 0.8rem;
   }
 
   /* Image sections */
