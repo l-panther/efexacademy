@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/pages';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -16,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <div class="hero-actions">
-          <a href="/contact" class="hero-btn">
+          <a href={asset('contact')} class="hero-btn">
             Get a Quote
             <i class="bi bi-arrow-right"></i>
           </a>
@@ -47,7 +48,7 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="row text-center image-content">
       <div class="col-12">
-        <img src={asset('assets/images/9.large-print/image1.jpg" alt="Portable modular exhibition stand setup at a conference')} />
+        <img src={asset('assets/images/9.large-print/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
       </div>
     </section>
   </div>
