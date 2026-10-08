@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -34,7 +35,7 @@ const testimonials = [
 
     <div class="hero-visual">
       <img
-        src="/assets/images/1.index/hero.png"
+        src={asset{'assets/images/1.index/hero.png'}}
         alt="Advertising and promotional banner display"
       />
     </div>
