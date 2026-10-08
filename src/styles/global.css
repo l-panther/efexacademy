@@ -95,7 +95,7 @@ img { width:100%}
 
 /* ---------- sidebar nav ---------- */
 #siteSidebar.offcanvas,
-#siteSidebar.offcanvas-lg{ background:var(--grey-bg); width:320px; }
+#siteSidebar.offcanvas-lg{ background: #013938; width:320px; }
 #siteSidebar .offcanvas-header{ border-bottom:1px solid var(--line); }
 #siteSidebar .nav-link{
   color:var(--ink); font-size:1.02rem; padding:.85rem 1.3rem; border-radius:0;
