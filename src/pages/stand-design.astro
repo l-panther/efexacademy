@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroArt from '../components/HeroArt.astro';
-import GalleryThumb from '../components/GalleryThumb.astro';
 ---
 
 <Layout title="Stand Design" active="stand-design">
@@ -27,7 +25,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
       <div class="hero-visual">
         <img
-          src="/assets/images/8.stand-design/hero.png"
+          src="{asset('ssets/images/8.stand-design/hero.png')}
           alt="Professional promotional banner stands"
         />
       </div>
@@ -43,10 +41,10 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row text-center image-content">
       <div class="col-sm-6">
-          <img src="/assets/images/8.stand-design/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
+          <img src={asset('assets/images/8.stand-design/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
         </div>
         <div class="col-sm-6">
-          <img src="/assets/images/8.stand-design/image2.jpg" alt="Brand event display stand with promotional materials" />
+          <img src={asset('assets/images/8.stand-design/image2.jpg')} alt="Brand event display stand with promotional materials" />
         </div>
     </section>
   </div>
