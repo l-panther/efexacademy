@@ -1,5 +1,4 @@
 ---
-import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -12,7 +11,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       <div class="hero-content">
         <span class="hero-eyebrow">Exhibition Stands</span>
 
-        <h1>Make Your Brand Unmissable</h1>
+        <h1>Make Your Brand <span>Unmissable</span></h1>
 
         <p>
           Professional exhibition stands designed to attract, engage and impress.
@@ -27,7 +26,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       </div>
       <div class="hero-visual">
         <img
-          src={asset('assets/images/6.exhibition/hero.png')}
+          src="/assets/images/6.exhibition/hero.png"
           alt="Professional promotional banner stands"
         />
       </div>
@@ -51,10 +50,10 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row text-center image-content">
       <div class="col-sm-6">
-        <img src={asset('assets/images/6.exhibition/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
+        <img src="/assets/images/6.exhibition/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
       </div>
       <div class="col-sm-6">
-        <img src={asset('assets/images/6.exhibition/image2.jpg')} alt="Brand event display stand with promotional materials" />
+        <img src="/assets/images/6.exhibition/image2.jpg" alt="Brand event display stand with promotional materials" />
       </div>
     </section>
   </div>

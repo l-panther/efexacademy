@@ -1,5 +1,4 @@
 ---
-import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -12,7 +11,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       <div class="hero-content">
         <span class="hero-eyebrow">Roller Banners</span>
 
-        <h1>Bold Displays That Get Noticed.</h1>
+        <h1>Bold <span>Displays</span> That Get Noticed</h1>
 
         <p>
           Professional roller banners for events, exhibitions and promotions.
@@ -28,7 +27,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
       <div class="hero-visual">
         <img
-          src={asset('assets/images/2.roller-banners/hero.png')}
+          src="/assets/images/2.roller-banners/hero.png"
           alt="Advertising and promotional banner display"
         />
       </div>
@@ -52,7 +51,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row text-center image-content">
       <div class="col-12">
-        <img src={asset('assets/images/2.roller-banners/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
+        <img src="/assets/images/2.roller-banners/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
       </div>
     </section>
   </div>

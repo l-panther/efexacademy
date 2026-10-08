@@ -1,5 +1,4 @@
 ---
-import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -19,14 +18,14 @@ const testimonials = [
     <div class="hero-content">
       <span class="hero-eyebrow">Quality Print &amp; Display Solutions</span>
 
-      <h1>The Home of Adverting</h1>
+      <h1>The Home of <span>Adverting</span></h1>
 
       <p>
         Professional banners and displays for events, exhibitions and promotions.
       </p>
 
       <div class="hero-actions">
-        <a href={asset('contact')} class="hero-btn">
+        <a href="/contact" class="hero-btn">
           Get a Quote
           <i class="bi bi-arrow-right"></i>
         </a>
@@ -35,7 +34,7 @@ const testimonials = [
 
     <div class="hero-visual">
       <img
-        src={asset('assets/images/1.index/hero.png')}
+        src="/assets/images/1.index/hero.png"
         alt="Advertising and promotional banner display"
       />
     </div>
@@ -67,10 +66,10 @@ const testimonials = [
 
     <section class="row text-center image-content">
       <div class="col-sm-6">
-        <img src={asset('assets/images/3.banner-stands/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
+        <img src="/assets/images/3.banner-stands/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
       </div>
       <div class="col-sm-6">
-        <img src={asset('assets/images/3.banner-stands/image2.jpg')} alt="Brand event display stand with promotional materials" />
+        <img src="/assets/images/3.banner-stands/image2.jpg" alt="Brand event display stand with promotional materials" />
       </div>
     </section>
   </div>

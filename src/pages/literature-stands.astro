@@ -1,5 +1,4 @@
 ---
-import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -12,7 +11,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       <div class="hero-content">
         <span class="hero-eyebrow">Literature Stands</span>
 
-        <h1>Present Your Message in Style.</h1>
+        <h1>Present Your <span>Message</span> in Style</h1>
 
         <p>
           Stylish literature stands for brochures, leaflets and promotional materials.
@@ -27,7 +26,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       </div>
       <div class="hero-visual">
         <img
-          src={asset('assets/images/5.literature/hero.png')}
+          src="/assets/images/5.literature/hero.png"
           alt="Professional promotional banner stands"
         />
       </div>
@@ -63,10 +62,10 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row image-content literature-art text-center">
       <div class="col-sm-6">
-        <img src={asset('assets/images/5.literature/image1.png')} alt="Portable modular exhibition stand setup at a conference" />
+        <img src="/assets/images/5.literature/image1.png" alt="Portable modular exhibition stand setup at a conference" />
       </div>
       <div class="col-sm-6">
-        <img src={asset('assets/images/5.literature/image2.png')} alt="Brand event display stand with promotional materials" />
+        <img src="/assets/images/5.literature/image2.png" alt="Brand event display stand with promotional materials" />
       </div>
     </section>
   </div>

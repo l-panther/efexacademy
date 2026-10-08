@@ -1,5 +1,4 @@
 ---
-import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -12,14 +11,14 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       <div class="hero-content">
         <span class="hero-eyebrow">Popup Stands</span>
 
-        <h1>Big Impact. Easy Setup.</h1>
+        <h1>Big <span>Impact</span>. Easy Setup</h1>
 
-         <p>
-           Professional pop-up stands for exhibitions, events and promotional spaces.
-         </p>
+        <p>
+          Professional pop-up stands for exhibitions, events and promotional spaces.
+        </p>
 
         <div class="hero-actions">
-          <a href={asset('contact')} class="hero-btn">
+          <a href="/contact" class="hero-btn">
             Get a Quote
             <i class="bi bi-arrow-right"></i>
           </a>
@@ -28,7 +27,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
       <div class="hero-visual">
         <img
-          src={asset('assets/images/4.popup/hero.png')}
+          src="/assets/images/4.popup/hero.png"
           alt="Professional promotional banner stands"
         />
       </div>
@@ -47,10 +46,10 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row text-center image-content">
       <div class="col-sm-6">
-        <img src={asset('assets/images/4.popup/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
+        <img src="/assets/images/4.popup/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
       </div>
       <div class="col-sm-6">
-        <img src={asset('assets/images/4.popup/image2.jpg')} alt="Brand event display stand with promotional materials" />
+        <img src="/assets/images/4.popup/image2.jpg" alt="Brand event display stand with promotional materials" />
       </div>
     </section>
   </div>

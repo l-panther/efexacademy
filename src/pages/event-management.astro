@@ -1,5 +1,4 @@
 ---
-import { asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import GalleryThumb from '../components/GalleryThumb.astro';
@@ -12,7 +11,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       <div class="hero-content">
         <span class="hero-eyebrow">Event management</span>
 
-        <h1>Seamless Events. Lasting Impact</h1>
+        <h1>Seamless <span>Events</span>. Lasting Impact</h1>
 
         <p>
           Professional event management designed to bring your ideas to life.
@@ -28,7 +27,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
       <div class="hero-visual">
         <img
-          src={asset('assets/images/10.event-management/hero.png')}
+          src="/assets/images/10.event-management/hero.png"
           alt="Professional promotional banner stands"
         />
       </div>
@@ -44,10 +43,10 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
      <section class="row image-content">
       <div class="col-sm-6">
-        <img src={asset('assets/images/10.event-management/image1.jpg')} alt="Portable modular exhibition stand setup at a conference" />
+        <img src="/assets/images/10.event-management/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
       </div>
       <div class="col-sm-6">
-        <img src={asset('assets/images/10.event-management/image2.jpg')} alt="Brand event display stand with promotional materials" />
+        <img src="/assets/images/10.event-management/image2.jpg" alt="Brand event display stand with promotional materials" />
       </div>
     </section>
     </div>
