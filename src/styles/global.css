@@ -29,16 +29,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline:3px solid #2563eb; outline-offset:2px; border-radius:2px;
 }
 .container { max-width: 85rem; padding: 0;}
-.image-content {
-  margin-top: 3rem;
-  row-gap: 1.5rem;
-}
-
-.image-content img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+.image-content { margin-top: 3rem; }
 .literature-art img { width: 100%; }
 img { width:100%}
 .skip-link{
@@ -143,11 +134,8 @@ img { width:100%}
 .page-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    155deg,
-    var(--olive) 0%,
-    var(--olive-dark) 100%
-  );
+  background: url("/assets/images/hero.jpg") no-repeat;
+  background-size: cover;
 }
 
 .hero-grid {
@@ -178,7 +166,7 @@ img { width:100%}
 
   margin-bottom: 18px;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--olive);
 
   font-size: 0.78rem;
   font-weight: 700;
@@ -197,12 +185,15 @@ img { width:100%}
 .hero-content h1 {
   margin: 0;
 
-  color: var(--paper);
+  color: var(--line);
 
   font-size: clamp(2.8rem, 5vw, 3rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
+  text-transform: capitalize;
 }
+
+.hero-content span { color: #f0bd3f; }
 
 .hero-content p {
   max-width: 560px;
@@ -421,8 +412,7 @@ img { width:100%}
 .site-footer .services-line{ color:var(--olive); margin-bottom:18px; }
 .site-footer .services-line a{ color:var(--olive); }
 .site-footer p{ margin-bottom:10px; }
-.site-footer a{ color: var(--olive); }
-.site-footer .legal-links { padding: 20px 0; color:var(--grey-bg) !important; list-style: none; }
+.site-footer a{ color:rgba(255,255,255,.85); }
 .site-footer .legal-links a{ color:var(--olive); text-decoration:underline; }
 .copyright{ text-align:center; color:rgba(255,255,255,.55); font-size:.85rem; padding-top:20px; margin-top:20px; border-top:1px solid rgba(255,255,255,.1); }
 .copyright a{ color:var(--olive); }
@@ -473,52 +463,4 @@ img { width:100%}
   .page-content{ padding:36px 24px; }
   .gallery-row{ padding:32px 24px 44px; }
   .site-footer{ padding:32px 24px; }
-}
-
-@media (max-width: 575px) {
-
-  .hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.1;
-    padding: 0.4rem 0 !important;
-  }
-
-  .hero-visual img {
-    width: 100%;
-    max-width: 410px;
-    margin-top: 0.8rem;
-  }
-
-  /* Image sections */
-  .image-content {
-    margin-top: 0;
-    padding-top: 3rem;
-    padding-bottom: 1.5rem;
-    row-gap: 1.5rem;
-  }
-
-  .image-content img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
-
-
-  /* Footer */
-  .site-footer {
-    padding: 2.5rem 1.25rem 1.5rem;
-    font-size: 0.78rem;
-    line-height: 1.6;
-  }
-
-  .site-footer .services-line {
-    margin-bottom: 1rem;
-  }
-
-  .copyright {
-    font-size: 0.7rem;
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
 }
