@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroArt from '../components/HeroArt.astro';
-import GalleryThumb from '../components/GalleryThumb.astro';
 ---
 
 <Layout title="Large Format Print" active="large-format-print">
@@ -26,7 +24,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
       </div>
       <div class="hero-visual">
         <img
-          src="/assets/images/9.large-print/hero.png"
+          src={asset('assets/images/9.large-print/hero.png')}
           alt="Professional promotional banner stands"
         />
       </div>
@@ -49,7 +47,7 @@ import GalleryThumb from '../components/GalleryThumb.astro';
 
     <section class="row text-center image-content">
       <div class="col-12">
-        <img src="/assets/images/9.large-print/image1.jpg" alt="Portable modular exhibition stand setup at a conference" />
+        <img src={asset('assets/images/9.large-print/image1.jpg" alt="Portable modular exhibition stand setup at a conference')} />
       </div>
     </section>
   </div>
