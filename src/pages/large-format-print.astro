@@ -1,6 +1,5 @@
 ---
-import { BASE_URL } from '../utils/paths';
-import { asset } from '../utils/paths';
+import { page, asset } from '../utils/paths';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -18,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <div class="hero-actions">
-          <a href={BASE_URL('contact')} class="hero-btn">
+          <a href={page('contact/')} class="hero-btn">
             Get a Quote
             <i class="bi bi-arrow-right"></i>
           </a>
