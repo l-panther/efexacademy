@@ -381,13 +381,13 @@ img { width:100%}
     height: auto;
     display: block;
     margin: 0 auto;
-    margin-bottom: 3em;
   }
 }
 
 /* ---------- content ---------- */
 .page-content{ padding:48px 44px; }
 .page-content h2{ font-weight:600; font-size:1.6rem; margin-bottom:18px; }
+.page-content h2:first-child{ margin-top:3em; }
 .page-content h3{ font-size:1.15rem; font-weight:600; margin:20px 0 6px; }
 .page-content p{ color:#333; line-height:1.7; }
 
