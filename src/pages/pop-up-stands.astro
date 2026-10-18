@@ -25,10 +25,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="hero-visual">
-        <img
-          src={asset('assets/images/4.popup/hero.png')}
-          alt="Professional promotional banner stands"
-        />
+        <picture>
+          <source media="(min-width:992px)" srcset={asset('assets/images/4.popup/hero.png')}
+          <img
+            src={asset('assets/images/4,/hero-mobile.png')}
+            alt="Professional promotional popup stands">
+        </picture>
       </div>
     </div>
   </section>
