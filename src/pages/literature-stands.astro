@@ -62,40 +62,46 @@ import Layout from '../layouts/Layout.astro';
         Flex Brochure Stand
       </h3>
     
-      <p>
-        A4 light aluminium collapsible display stand for 6 x A4 portrait brochures.<br>
-        Includes aluminium flight case for easy transportation.<br>
-        Material: aluminium/plastic<br>
-        Colour: silver/acrylic<br>
-        Size: 270 x 1470mm (W x H)<br>
-        Weight: 8kg
-      </p>
+      <ul class="spec-list">
+        <li>Lightweight aluminium collapsible display stand</li>
+        <li>Capacity for 6 x A4 portrait brochures</li>
+        <li>Includes aluminium flight case for easy transportation</li>
+        <li>Material: Aluminium / plastic</li>
+        <li>Colour: Silver / acrylic</li>
+        <li>Dimensions: 270 x 1470mm (W x H)</li>
+        <li>Weight: 8kg</li>
+      </ul>
     
       <h3>
         <span class="num-badge me-2">2</span>
         Zig Zag Table
       </h3>
     
-      <p>
-        Free-standing portable folding counter.<br>
-        Powder-coated grey finish.<br>
-        3 x A4 capacity.<br>
-        Folds flat for easy transport.<br>
-        Hardcase option available.<br>
-        Deep 30mm pockets for secure storage.<br>
-        No tools required for assembly.
-      </p>
+      <ul class="spec-list">
+        <li>Free-standing portable folding counter</li>
+        <li>Powder-coated grey finish</li>
+        <li>Capacity for 3 x A4 brochures</li>
+        <li>Folds flat for convenient transportation and storage</li>
+        <li>Optional hardcase available</li>
+        <li>Deep 30mm pockets for secure brochure storage</li>
+        <li>Quick assembly with no tools required</li>
+      </ul>
     
       <h3>
         <span class="num-badge me-2">3</span>
         iPad Display Stand
       </h3>
     
-      <p>
-        Holds iPad 1, iPad 2, and iPad 3 with apertures for dock connection.<br>
-        Enclosure rotation 360&deg;, 90&deg; tilt, and 360&deg; swivel for flexible display options.<br>
-        Acrylic podium tops and brochure holders available in neon blue, green, red, or frost finishes.
-      </p>
+      <ul class="spec-list">
+        <li>Compatible with iPad 1, iPad 2, and iPad 3</li>
+        <li>Integrated apertures for dock connections</li>
+        <li>360&deg; enclosure rotation</li>
+        <li>90&deg; tilt adjustment</li>
+        <li>360&deg; swivel for flexible viewing positions</li>
+        <li>Acrylic podium tops available</li>
+        <li>Optional brochure holders</li>
+        <li>Available finishes: Neon blue, green, red, or frost</li>
+      </ul>
     
       <p>
         From traditional brochure displays to interactive
@@ -126,3 +132,23 @@ import Layout from '../layouts/Layout.astro';
     </section>
   </div>
 </Layout>
+
+<style>
+
+/* Product specifications */
+.spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+
+.spec-list li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  line-height: 1.6;
+}
+
+.spec-list li:last-child {
+  border-bottom: none;
+}
+</style>
