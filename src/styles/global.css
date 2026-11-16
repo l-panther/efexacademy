@@ -20,7 +20,7 @@
   --font-body:"Inter",sans-serif;
 }
 body{ font-family:var(--font-body); color:var(--ink); }
-h1,h2,h3{ font-family:var(--font-head); color:var(--ink); }
+h1,h2,h3{ font-family:var(--font-hed); color:var(--ink); }
 a{ text-decoration:none; }
 
 /* Visible focus ring for keyboard users */
@@ -134,7 +134,7 @@ img { width:100%}
 .page-hero {
   position: relative;
   overflow: hidden;
-  background: url("/assets/images/hero.jpg") no-repeat;
+  background: var(--hero-bg) no-repeat;
   background-size: cover;
 }
 
@@ -281,7 +281,6 @@ img { width:100%}
   outline-offset: 4px;
 }
 
-
 /* ================================
    IMAGE
 ================================ */
@@ -302,7 +301,6 @@ img { width:100%}
 .hero-visual img {
   width: 100%;
 }
-
 
 /* ================================
    TABLET
@@ -398,71 +396,12 @@ img { width:100%}
 .gallery-row{ background:var(--grey-bg); padding:40px 44px 56px; display:flex; gap:24px; flex-wrap:wrap; }
 .gallery-row .thumb{ flex:1 1 280px; max-width:420px; aspect-ratio:4/3; border-radius:4px; overflow:hidden; box-shadow:var(--shadow); }
 
-/* ---------- testimonials (home) ---------- */
-.testimonial-panel{ border:1px solid var(--line); border-radius:4px; overflow:hidden; box-shadow:var(--shadow); margin-top:60px; }
-.testimonial-panel .head{ background:var(--red); color:#fff; padding:16px 24px; font-family:var(--font-head); font-size:1.3rem; font-weight:600; }
-.testimonial-panel .body{ background:#fafafa; padding:28px 26px; }
-.testimonial-item{ margin-bottom:22px; }
-.testimonial-item:last-child{ margin-bottom:0; }
-.testimonial-item cite{ font-style:italic; font-weight:600; display:block; margin-top:6px; }
-.testimonial-item .stars{ color:#D9A441; letter-spacing:2px; margin-top:4px; }
 
 /* ---------- numbered badge (literature stands) ---------- */
 .num-badge{
   width:34px; height:34px; border-radius:50%; background:#fff; color:var(--ink); border:2px solid var(--ink);
   display:inline-flex; align-items:center; justify-content:center; font-weight:700; flex:none;
 }
-
-/* ---------- footer ---------- */
-.site-footer{ background:var(--footer-bg); color:rgba(255,255,255,.82); padding:36px 44px; }
-.site-footer .services-line{ color:var(--olive); margin-bottom:18px; }
-.site-footer .services-line a{ color:var(--olive); }
-.site-footer p{ margin-bottom:10px; }
-.site-footer a{ color:rgba(255,255,255,.85); }
-.site-footer .legal-links a{ color:var(--olive); text-decoration:underline; }
-.copyright{ text-align:center; color:rgba(255,255,255,.55); font-size:.85rem; padding-top:20px; margin-top:20px; border-top:1px solid rgba(255,255,255,.1); }
-.copyright a{ color:var(--olive); }
-
-/* ---------- contact form ---------- */
-.contact-form-wrap{ max-width:900px; margin:0 auto; }
-.field-icon-row{ display:flex; align-items:center; gap:16px; margin-bottom:18px; }
-.field-icon-row .icon{ color:var(--olive-dark); flex:none; width:24px; text-align:center; }
-.field-icon-row input, .field-icon-row textarea{
-  flex:1; border:1px solid var(--line); border-radius:4px; padding:12px 14px; font-family:var(--font-body);
-}
-.field-error {
-  margin: 0.35rem 0 0;
-  font-size: 0.85rem;
-  color: #d64545;
-  min-height: 1.1em;
-}
-
-/* Message field: counter + error share one row instead of stacking */
-#charCount-wrap {
-  display: inline-block;
-}
-
-.message-meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.message-meta-row .field-error {
-  margin: 0;
-  text-align: left;
-  flex: 1;
-}
-
-.message-meta-row .char-count {
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-.btn-olive{ background:var(--olive); border-color:var(--olive); color:#fff; font-weight:600; }
-.btn-olive:hover{ background:var(--olive-dark); border-color:var(--olive-dark); color:#fff; }
-
-#map{ height:420px; border-radius:6px; box-shadow:var(--shadow); }
 
 @media (max-width:991.98px){
   .page-hero{ padding:40px 24px; }
