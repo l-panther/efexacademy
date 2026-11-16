@@ -1,3 +1,6 @@
+---
+const currentYear = new Date().getFullYear();
+---
 <footer class="site-footer">
   <p class="services-line">
     Pop Ups, Roll Ups, Banner Stands, Outdoor Banners, Foamex Graphics, Canvas Prints, Internal Signage,
@@ -9,5 +12,18 @@
     <li><a href="/privacy/">Privacy Policy</a></li>
     <li><a href="/terms/">Terms &amp; Conditions</a></li>
   </ul>
-  <p class="copyright mb-0">&copy; 2026 Efexacademy. All rights reserved. By <a href="#">Leroy Russell</a></p>
+  <p class="copyright mb-0">&copy; {currentYear} Efexacademy. All rights reserved. By <a href="#">Leroy Russell</a></p>
 </footer>
+
+
+<style>
+/* ---------- footer ---------- */
+.site-footer{ background:var(--footer-bg); color:rgba(255,255,255,.82); padding:36px 44px; }
+.site-footer .services-line{ color:var(--olive); margin-bottom:18px; }
+.site-footer .services-line a{ color:var(--olive); }
+.site-footer p{ margin-bottom:10px; }
+.site-footer a{ color:rgba(255,255,255,.85); }
+.site-footer .legal-links a{ color:var(--olive); text-decoration:underline; }
+.copyright{ text-align:center; color:rgba(255,255,255,.55); font-size:.85rem; padding-top:20px; margin-top:20px; border-top:1px solid rgba(255,255,255,.1); }
+.copyright a{ color:var(--olive); }
+</style>
