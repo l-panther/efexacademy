@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Contact" active="contact">
+<Layout 
+  title="Contact us" 
+  description="Contact Efex Academy to discuss exhibition stands, custom banners, large-format printing and event display solutions. Get in touch with our team today."
+  active="contact">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <div class="page-content">
     <div class="contact-form-wrap">
@@ -72,25 +75,25 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="field-icon-row align-items-start">
-  <i class="bi bi-pencil-fill icon mt-2" aria-hidden="true"></i>
-  <div class="flex-grow-1">
-    <label class="visually-hidden" for="message">Message</label>
-    <textarea
-      id="message"
-      name="message"
-      rows="6"
-      maxlength="200"
-      placeholder="Type your message here..."
-      required
-      aria-required="true"
-      aria-describedby="message-error charCount-wrap"
-    ></textarea>
-    <div class="message-meta-row">
-      <p id="message-error" class="field-error" role="alert"></p>
-      <div class="char-count" id="charCount-wrap"><span id="charCount">0</span>/200</div>
-    </div>
-  </div>
-</div>
+          <i class="bi bi-pencil-fill icon mt-2" aria-hidden="true"></i>
+          <div class="flex-grow-1">
+            <label class="visually-hidden" for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              maxlength="200"
+              placeholder="Type your message here..."
+              required
+              aria-required="true"
+              aria-describedby="message-error charCount-wrap"
+            ></textarea>
+            <div class="message-meta-row">
+              <p id="message-error" class="field-error" role="alert"></p>
+              <div class="char-count" id="charCount-wrap"><span id="charCount">0</span>/200</div>
+            </div>
+          </div>
+        </div>
 
         <button type="submit" class="btn btn-olive w-100 py-2">
           <span class="btn-label">Send Message</span>
@@ -116,8 +119,139 @@ import Layout from '../layouts/Layout.astro';
       <button type="button" id="successClose" class="btn btn-olive">Close</button>
     </div>
   </div>
+</Layout>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  /* ---------- contact form ---------- */
+.contact-form-wrap{ max-width:900px; margin:0 auto; }
+.field-icon-row{ display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+.field-icon-row .icon{ color:var(--olive-dark); flex:none; width:24px; text-align:center; }
+.field-icon-row input, .field-icon-row textarea{
+  flex:1; border:1px solid var(--line); border-radius:4px; padding:12px 14px; font-family:var(--font-body);
+}
+.field-error {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: #d64545;
+  min-height: 1.1em;
+}
+
+/* Message field: counter + error share one row instead of stacking */
+#charCount-wrap {
+  display: inline-block;
+}
+
+.message-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.message-meta-row .field-error {
+  margin: 0;
+  text-align: left;
+  flex: 1;
+}
+
+.message-meta-row .char-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.btn-olive{ background:var(--olive); border-color:var(--olive); color:#fff; font-weight:600; }
+.btn-olive:hover{ background:var(--olive-dark); border-color:var(--olive-dark); color:#fff; }
+
+
+    .field-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.1rem;
+    }
+    .field-icon-row.align-items-start {
+      align-items: flex-start;
+    }
+    .field-icon-row input,
+    .field-icon-row textarea {
+      width: 100%;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .field-icon-row input.is-invalid,
+    .field-icon-row textarea.is-invalid {
+      border-color: #d64545;
+      box-shadow: 0 0 0 1px rgba(214, 69, 69, 0.25);
+    }
+    .field-icon-row input.is-valid,
+    .field-icon-row textarea.is-valid {
+      border-color: #4a7c3c;
+    }
+    .field-error {
+      margin: 0.35rem 0 0;
+      font-size: 0.85rem;
+      color: #d64545;
+      min-height: 1.1em;
+    }
+
+    .btn-olive.is-loading .btn-label {
+      visibility: hidden;
+    }
+    .btn-spinner {
+      display: none;
+    }
+    .btn-olive.is-loading .btn-spinner {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      margin: -9px 0 0 -9px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    .popup-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    }
+    .popup-icon {
+      font-size: 2.5rem;
+      color: #4a7c3c;
+      margin-bottom: 0.75rem;
+    }
+    .popup-card h3 {
+      margin: 0 0 0.5rem;
+    }
+    .popup-card p {
+      margin: 0 0 1.25rem;
+      color: #555;
+    }
+
+    #map{ height:420px; border-radius:6px; box-shadow:var(--shadow); }
+</style>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   // Leaflet is loaded globally via the CDN <script> tag, so TS doesn't know about it.
   declare const L: any;
@@ -322,94 +456,3 @@ function validateAll(): boolean {
     }
   });
 </script>
-
-  <style>
-    .field-icon-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.1rem;
-    }
-    .field-icon-row.align-items-start {
-      align-items: flex-start;
-    }
-    .field-icon-row input,
-    .field-icon-row textarea {
-      width: 100%;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-    .field-icon-row input.is-invalid,
-    .field-icon-row textarea.is-invalid {
-      border-color: #d64545;
-      box-shadow: 0 0 0 1px rgba(214, 69, 69, 0.25);
-    }
-    .field-icon-row input.is-valid,
-    .field-icon-row textarea.is-valid {
-      border-color: #4a7c3c;
-    }
-    .field-error {
-      margin: 0.35rem 0 0;
-      font-size: 0.85rem;
-      color: #d64545;
-      min-height: 1.1em;
-    }
-
-    .btn-olive {
-      position: relative;
-    }
-    .btn-olive.is-loading .btn-label {
-      visibility: hidden;
-    }
-    .btn-spinner {
-      display: none;
-    }
-    .btn-olive.is-loading .btn-spinner {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 18px;
-      height: 18px;
-      margin: -9px 0 0 -9px;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 1rem;
-    }
-    .popup-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 2rem;
-      max-width: 380px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-    }
-    .popup-icon {
-      font-size: 2.5rem;
-      color: #4a7c3c;
-      margin-bottom: 0.75rem;
-    }
-    .popup-card h3 {
-      margin: 0 0 0.5rem;
-    }
-    .popup-card p {
-      margin: 0 0 1.25rem;
-      color: #555;
-    }
-  </style>
-</Layout>
