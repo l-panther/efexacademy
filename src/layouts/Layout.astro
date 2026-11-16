@@ -7,7 +7,7 @@ import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-const { title, active = '' } = Astro.props;
+const { title, description, active = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,20 +15,19 @@ const { title, active = '' } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title} · Efexacademy</title>
-  <meta name="description" content="Efex Academy offers custom-designed company banners, exhibition stands, and large format printing solutions for businesses. Enhance your brand presence with our professional event display services." />
-  <meta name="keywords" content="Custom Banners, Banner Design, Roll-up Banners, Pop-up Stands, Exhibition Stands, Modular Stands, Large Format Printing, Event Displays, Trade Show Stands, Corporate Branding, Efex Academy" />
-  <meta name="author" content="">
+  <title>{title} | Efexacademy</title>
+  <title>Efex Academy | Custom Banners, Exhibition Stands & Printing</title>
+  <meta name="description" content={description}/> <meta name="author" content="Leroy Russell">
   
   <link rel="icon" type="image/png" sizes="32x32" href={asset('assets/images/logo/logo.png')}>
   <link rel="apple-touch-icon" sizes="180x180" href={asset('assets/images/logo/apple-touch-logo.png')}>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style={`--hero-bg: url("${asset('assets/images/hero.jpg')}")`}>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <div class="container">
