@@ -10,7 +10,10 @@ const testimonials = [
 ];
 ---
 
-<Layout title="Home" active="home">
+<Layout 
+  title="Exhibition Stands, Banners & Printing" 
+  description="Efex Academy provides exhibition stands, custom banners, event displays and large-format printing solutions to help businesses showcase their brands." 
+  active="home">
 <section class="page-hero">
   <div class="hero-grid">
 
@@ -123,3 +126,15 @@ const testimonials = [
     </section>
   </div>
 </Layout>
+
+
+<style>
+/* ---------- testimonials (home) ---------- */
+.testimonial-panel{ border:1px solid var(--line); border-radius:4px; overflow:hidden; box-shadow:var(--shadow); margin-top:60px; }
+.testimonial-panel .head{ background:var(--red); color:#fff; padding:16px 24px; font-family:var(--font-head); font-size:1.3rem; font-weight:600; }
+.testimonial-panel .body{ background:#fafafa; padding:28px 26px; }
+.testimonial-item{ margin-bottom:22px; }
+.testimonial-item:last-child{ margin-bottom:0; }
+.testimonial-item cite{ font-style:italic; font-weight:600; display:block; margin-top:6px; }
+.testimonial-item .stars{ color:#D9A441; letter-spacing:2px; margin-top:4px; }
+</style>
